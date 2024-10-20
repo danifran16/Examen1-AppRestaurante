@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgLogoCafeteria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logocafeteria"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/imgMatcha"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogoCafeteria"
+        app:srcCompat="@drawable/matcha" />
+
+    <ImageView
+        android:id="@+id/imgMochi"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/imgMatcha"
+        app:layout_constraintTop_toBottomOf="@+id/imgMatcha"
+        app:srcCompat="@drawable/mochis" />
+
+    <TextView
+        android:id="@+id/tvItemMatcha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Matcha"
+        app:layout_constraintStart_toEndOf="@+id/imgMatcha"
+        app:layout_constraintTop_toTopOf="@+id/imgMatcha" />
+
+    <TextView
+        android:id="@+id/tvItemMochi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mochi"
+        app:layout_constraintStart_toStartOf="@+id/tvCantMatcha"
+        app:layout_constraintTop_toTopOf="@+id/imgMochi" />
+
+    <EditText
+        android:id="@+id/etCantMatcha"
+        android:layout_width="60dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/tvCantMatcha"
+        app:layout_constraintTop_toTopOf="@+id/tvCantMatcha" />
+
+    <EditText
+        android:id="@+id/etCantMochi"
+        android:layout_width="60dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/tvCantMochi"
+        app:layout_constraintTop_toTopOf="@+id/tvCantMochi" />
+
+    <TextView
+        android:id="@+id/tvCantMatcha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Cantidad:"
+        app:layout_constraintStart_toStartOf="@+id/tvItemMatcha"
+        app:layout_constraintTop_toBottomOf="@+id/tvItemMatcha" />
+
+    <TextView
+        android:id="@+id/tvCantMochi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cantidad:"
+        app:layout_constraintStart_toStartOf="@+id/tvItemMochi"
+        tools:layout_editor_absoluteY="381dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber4"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/tvCantMatcha"
+        app:layout_constraintTop_toBottomOf="@+id/tvCantMatcha" />
+
+    <EditText
+        android:id="@+id/editTextNumber5"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/tvCantMochi"
+        app:layout_constraintTop_toBottomOf="@+id/tvCantMochi" />
+
+    <TextView
+        android:id="@+id/tvTotalSinProp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="16dp"
+        android:text=" Total Cuenta"
+        app:layout_constraintEnd_toStartOf="@+id/etTotalCuenta"
+        app:layout_constraintTop_toBottomOf="@+id/imgMochi" />
+
+    <TextView
+        android:id="@+id/tvPropina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Propina"
+        app:layout_constraintStart_toStartOf="@+id/tvTotalSinProp"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalSinProp" />
+
+    <TextView
+        android:id="@+id/tvTotalConProp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Total + prop"
+        app:layout_constraintStart_toStartOf="@+id/tvPropina"
+        app:layout_constraintTop_toBottomOf="@+id/tvPropina" />
+
+    <Switch
+        android:id="@+id/switchPropina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tvPropina"
+        app:layout_constraintTop_toTopOf="@+id/tvPropina" />
+
+    <EditText
+        android:id="@+id/etTotalCuenta"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTotalSinProp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etPropina"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPropina"
+        app:layout_constraintStart_toStartOf="@+id/etTotalCuenta" />
+
+    <EditText
+        android:id="@+id/etTotalMasPropina"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTotalConProp"
+        app:layout_constraintStart_toStartOf="@+id/etPropina" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
