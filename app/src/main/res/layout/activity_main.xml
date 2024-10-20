@@ -9,12 +9,13 @@
 
     <ImageView
         android:id="@+id/imgLogoCafeteria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/logocafeteria"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logocafeteria" />
 
     <ImageView
         android:id="@+id/imgMatcha"
@@ -55,22 +56,24 @@
     <EditText
         android:id="@+id/etCantMatcha"
         android:layout_width="60dp"
-        android:layout_height="24dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:ems="10"
+        android:hint="20"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/tvCantMatcha"
-        app:layout_constraintTop_toTopOf="@+id/tvCantMatcha" />
+        app:layout_constraintBottom_toBottomOf="@+id/tvCantMatcha"
+        app:layout_constraintStart_toEndOf="@+id/tvCantMatcha" />
 
     <EditText
         android:id="@+id/etCantMochi"
         android:layout_width="60dp"
-        android:layout_height="24dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:ems="10"
+        android:hint="2"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/tvCantMochi"
-        app:layout_constraintTop_toTopOf="@+id/tvCantMochi" />
+        app:layout_constraintBottom_toBottomOf="@+id/tvCantMochi"
+        app:layout_constraintStart_toEndOf="@+id/tvCantMochi" />
 
     <TextView
         android:id="@+id/tvCantMatcha"
@@ -85,26 +88,30 @@
         android:id="@+id/tvCantMochi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Cantidad:"
         app:layout_constraintStart_toStartOf="@+id/tvItemMochi"
-        tools:layout_editor_absoluteY="381dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tvItemMochi"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextNumber4"
+        android:id="@+id/etTotalMatcha"
         android:layout_width="100dp"
-        android:layout_height="20dp"
+        android:layout_height="48dp"
         android:layout_marginTop="28dp"
+        android:hint="5000"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="@+id/tvCantMatcha"
         app:layout_constraintTop_toBottomOf="@+id/tvCantMatcha" />
 
     <EditText
-        android:id="@+id/editTextNumber5"
+        android:id="@+id/etTotalMochi"
         android:layout_width="100dp"
-        android:layout_height="20dp"
+        android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="5500"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="@+id/tvCantMochi"
         app:layout_constraintTop_toBottomOf="@+id/tvCantMochi" />
@@ -141,14 +148,17 @@
         android:id="@+id/switchPropina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="@+id/tvPropina"
         app:layout_constraintTop_toTopOf="@+id/tvPropina" />
 
     <EditText
         android:id="@+id/etTotalCuenta"
         android:layout_width="80dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
+        android:hint="2"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/tvTotalSinProp"
@@ -158,8 +168,9 @@
     <EditText
         android:id="@+id/etPropina"
         android:layout_width="80dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:ems="10"
+        android:hint="12"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/tvPropina"
         app:layout_constraintStart_toStartOf="@+id/etTotalCuenta" />
@@ -167,7 +178,8 @@
     <EditText
         android:id="@+id/etTotalMasPropina"
         android:layout_width="80dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
+        android:hint="10"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/tvTotalConProp"
