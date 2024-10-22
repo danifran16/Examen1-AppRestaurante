@@ -14,9 +14,13 @@ import cl.danig.android.examen1_apprestaurante.modelo.ItemMenu
 import cl.danig.android.examen1_apprestaurante.modelo.ItemMesa
 
 class MainActivity : AppCompatActivity() {
-    //Instanciar objetos del menu
+//Instanciar objetos del menu
     val matcha = ItemMenu(nombre = "Matcha", precio = "2500")
     val mochi = ItemMenu(nombre = "Mochi", precio = "1000")
+
+//Instancia de objeto CuentaMesa
+    val numMesa = 0
+    val totalCuenta = CuentaMesa(numMesa)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +45,7 @@ class MainActivity : AppCompatActivity() {
                 calcularTotalMochi()
 
                 calcularTotalCuentaSP()
+                calcularPropina()
             }
         }
         idCantMatcha.addTextChangedListener(watcher)
@@ -68,7 +73,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.etTotalMochi).text = totalMochi.calcularSubtotal().toString()
     }
 
-
     //Calcular total de la cuenta sin propina
     fun calcularTotalCuentaSP() {
         //capturo el id
@@ -80,16 +84,20 @@ class MainActivity : AppCompatActivity() {
 
 
         //saco el total entre matcha y mochi
-        val numMesa = 0
-
-        val totalCuenta = CuentaMesa(numMesa)
         totalCuenta.agregarItem(matcha, cantMatcha)
         totalCuenta.agregarItem(mochi, cantMochi)
 
         findViewById<TextView>(R.id.etTotalCuenta).text =
             totalCuenta.calcularTotalSinPropina().toString()
+    }
+
+    fun calcularPropina(){
+        totalCuenta.calcularPropina()
+        findViewById<TextView>(R.id.etPropina).text =
+            totalCuenta.calcularPropina().toString()
 
     }
+
 }
 
 

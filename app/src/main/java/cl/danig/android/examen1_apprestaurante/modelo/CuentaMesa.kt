@@ -27,7 +27,7 @@ class CuentaMesa(
     }
 
     fun calcularPropina():Int {
-        return (calcularTotalSinPropina() * 10) / 100
+        return ((calcularTotalSinPropina() * 10) / 100)
     }
 
     fun calcularTotalConPropina():Int{
