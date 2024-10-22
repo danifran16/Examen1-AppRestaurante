@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
                 calcularTotalCuentaSP()
                 calcularPropina()
+                calcularTotalConPropina()
             }
         }
         idCantMatcha.addTextChangedListener(watcher)
@@ -96,6 +97,12 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.etPropina).text =
             totalCuenta.calcularPropina().toString()
 
+    }
+
+    fun calcularTotalConPropina(){
+        totalCuenta.calcularTotalConPropina()
+        findViewById<TextView>(R.id.etTotalMasPropina).text =
+            totalCuenta.calcularTotalConPropina().toString()
     }
 
 }
